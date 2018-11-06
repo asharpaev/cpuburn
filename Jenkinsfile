@@ -9,7 +9,7 @@ node {
             | tar xvz docker/docker; mv ~/docker ~/bin; fi"
     }
     stage('Build') {
-        sh "~/bin/docker build --no-cache ."
+        sh "~/bin/docker build --no-cache -t registry:5000/cpuburn:latest ."
     }
 
 }
