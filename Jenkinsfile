@@ -5,6 +5,7 @@ node {
     }
     stage('Build') {
         sh "ip addr"
+        sh "ip addr"
         sh "docker build --no-cache"
     }
 
