@@ -9,4 +9,14 @@ node {
         sh "docker/docker push registry:5000/cpuburn:latest"
     }
 
+    stage('List pods') {
+    withKubeConfig([credentialsId: '${KUBE-CERT}',
+                    caCertificate: '${CA-CERT}',
+                    serverUrl: '${KUBE-URL}',
+                    contextName: 'default'
+                    ]) {
+            sh 'kubectl get pods'
+        }
+    }
+
 }
