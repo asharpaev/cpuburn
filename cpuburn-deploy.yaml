@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cpuburn
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpuburn
+  template:
+    metadata:
+      labels:
+        app: cpuburn
+    spec:
+      containers:
+      - name: cpuburn
+        image: registry:5000/cpuburn:latest
