@@ -1,4 +1,5 @@
 node {
+    label 'slave'
     stage('Checkout'){
         checkout scm
         sh "ip addr"
